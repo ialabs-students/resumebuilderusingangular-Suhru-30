@@ -1,0 +1,290 @@
+<!--<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+  <script>
+    function onBtnClick() {
+      const btn = document.getElementById("button2");
+
+      var element = document.getElementById('top');
+      html2pdf().from(element).save('filename.pdf');
+      console.log(html2pdf().from(element).save('filename.pdf'))
+    }
+  </script>
+
+</head>-->
+
+<body>
+  
+    <div class="container text-center text-lg-left">
+      <div class="py-3 clearfix">
+        <h1 class="site-title mb-0" style="font-size:40px">
+
+          Resume
+        </h1>
+        <div style="padding-top: 10px; padding-right: 30px;">
+          <!--<button onclick="onBtnClick()" type="button" class="btn btn-outline-success" style="float: right"> Download
+            Resume
+          </button>-->
+          <div class="site-nav">
+            <div class="col-md-8.5">
+              <div style="padding-right: 20px">
+                <i class="fab fa-instagram" style="font-size:20px;color:red"></i>&nbsp;
+
+                <span>{{formData.In}}</span>
+              </div>
+
+
+              <i class="fab fa-facebook" style="font-size:20px;color:#000080"></i>&nbsp;
+              <span>{{formData.fb}}</span>
+
+              <div>
+
+
+
+                <i class="fab fa-linkedin" style="font-size:20px;color:#000080"></i>&nbsp;
+                <span>{{formData.Ln}}</span>
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  
+  <div class="page-content">
+    <div class="container">
+      <div class="cover shadow-lg bg-white">
+        <div class="cover-bg p-3 p-lg-4 text-white" style="background-color:#F778A1">
+          <!--<div class="row">
+      <div class="col-lg-4 col-md-5">
+        <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="avatar.jfif" width="200" height="200"/></div>
+      </div>
+      
+        
+      </div>-->
+          <div class="col-lg-12 col-md-7 text-center text-md-start">
+            <h2 class="h1 mt-7" data-aos="fade-left" data-aos-delay="0" style="color: black;">
+              <p class="text-center">{{formData.firstName}} {{formData.lastName}}</p>
+            </h2>
+          </div>
+
+        </div>
+        <div class="about-section pt-4 px-3 px-lg-4 mt-1">
+          <div class="row">
+            <div class="col-md-6" style="padding-left:60px">
+              <h2 class="h3 mb-3">About Me</h2>
+              <p class="text-box">Hello!
+                <span>{{formData.Describe}}</span>
+              </p>
+            </div>
+            <div class="col-md-5 offset-md-1">
+              <div class="row mt-2">
+                <div class="col-sm-4">
+                  <div class="pb-1">Date Of Birth</div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="pb-1 text-secondary"><span>{{formData.dob}}</span></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="pb-1">Email</div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="pb-1 text-secondary"><span>{{formData.Email}}</span></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="pb-1">Phone</div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="pb-1 text-secondary"><span>{{formData.mobile}}</span></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="pb-1">Address</div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="pb-1 text-secondary"><span>{{formData.Address}}</span></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="pb-1">Gender</div>
+                </div>
+                <div class="col-sm-8">
+
+                  <div class="pb-1 text-secondary"><span>{{formData.Gender}}</span></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="work-experience-section px-3 px-lg-4">
+          <h2 class="h3 mb-3">Work Experience</h2>
+          <div class="timeline">
+            <div class="timeline-card timeline-card-primary card shadow-sm">
+              <div class="card-body">
+                <table class="table table-info" width="1000" style="background-color:#ffdae5">
+
+
+                  <tr style="text-align:center;">
+                    <th style="border-color:#F778A1"> Organization </th>
+                    <th style="border-color:#F778A1"> Joining Date</th>
+                    <th style="border-color:#F778A1"> Releaving Date </th>
+                    <th style="border-color:#F778A1">Years on Experience</th>
+                  </tr>
+
+                  <tr width="1000" style="border-color:#F778A1">
+                    <td style="text-align:center;border-color: #F778A1"><span>{{formData.organization1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.doj1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.dor1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.Experience1}}</span></td>
+
+                  </tr>
+                  <tr>
+                    <td style="text-align:center;border-color:#F778A1"> <span>{{formData.organization2}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"> <span>{{formData.doj2}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"> <span>{{formData.dor2}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.Experience1}}</span></td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="work-experience-section px-3 px-lg-4">
+          <h2 class="h3 mb-3">Skills</h2>
+          <div class="timeline">
+            <div class="timeline-card timeline-card-primary card shadow-sm">
+              <div class="card-body">
+                <table class="table table-info" width="1000" style="background-color:#ffdae5">
+                  <thead>
+                    <tr style="text-align:center;border-color: #F778A1">
+                      <th style="border-color:#F778A1"> Technology</th>
+                      <th style="border-color:#F778A1"> project</th>
+                      <th style="border-color:#F778A1"> Last Worked On </th>
+                      <th style="border-color:#F778A1"> Rating </th>
+                    </tr>
+                  </thead>
+                  <tr width="1000">
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.tech1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.company1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.lastworkedon1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.rate1}}</span> </td>
+
+                  </tr>
+                  <tr width="1000">
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.tech1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.company1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.lastworkedon2}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.rate2}}</span> </td>
+                  </tr>
+                  <tr width="1000">
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.tech3}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.company3}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.lastworkedon3}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.rate3}}</span> </td>
+                  </tr>
+                  <tr width="1000">
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.tech4}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.company4}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.lastworkedon4}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.rate4}}</span> </td>
+                  </tr>
+                  <tr width="1000">
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.tech5}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.company5}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.lastworkedon5}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.rate5}}</span> </td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="work-experience-section px-3 px-lg-4">
+          <h2 class="h3 mb-3">Education</h2>
+          <div class="timeline">
+            <div class="timeline-card timeline-card-primary card shadow-sm">
+              <div class="card-body">
+                <table class="table table-info" width="1000" style="background-color:#ffdae5">
+
+                  <thead>
+                    <tr style="text-align:center;border-color: #F778A1;">
+                      <th style="border-color:#F778A1"> Education </th>
+                      <th style="border-color:#F778A1"> School/University</th>
+                      <th style="border-color:#F778A1"> Year of Passing </th>
+                      <th style="border-color:#F778A1"> Percentage/CGPA </th>
+                    </tr>
+                  </thead>
+
+                  <tr style="text-align:center">
+                    <td style="border-color:#F778A1"> <label>Post Graduation</label> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.university1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.yearofpassing1}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.percentage1}}</span> </td>
+
+                  </tr>
+                  <tr style="text-align:center">
+                    <td style="border-color:#F778A1"> <label>Graduation</label> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.university2}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.yearofpassing2}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.percentage2}}</span> </td>
+                  </tr>
+                  <tr style="text-align:center">
+                    <td style="border-color:#F778A1"> <label>Intermidate</label> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.university3}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.yearofpassing3}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.percentage3}}</span> </td>
+                  </tr>
+                  <tr style="text-align:center">
+                    <td style="border-color:#F778A1"> <label>High School</label> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.university4}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.yearofpassing4}}</span> </td>
+                    <td style="text-align:center;border-color:#F778A1"><span>{{formData.percentage4}}</span> </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="work-experience-section  px-3 px-lg-4">
+          <h2 class="h3 mb-3">Declaration with Signature</h2>
+          <div class="timeline">
+            <div class="timeline-card timeline-card-primary card shadow-sm">
+              <div class="card-body" style="background-color:#ffdae5;height:auto">
+                <br>
+                <div class="pb-1 text-secondary"><span style="color: black">{{formData.Declaration}}</span>
+                </div>
+                <br>
+                <br>
+                <div class="card-body" style="width:26cm;padding-left:700px">
+                  <div class="timeline-card timeline-card-primary card shadow-sm"
+                    style="background-color: #f7a7c0;width:5cm">
+                    <br>
+                    <div class="pb-1 text-secondary" style="font-size:18px;text-align:center"><b><span
+                          style="color:black">{{formData.Signature}}</span></b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="text-center"> ...Thank You !... </h1>
+
+      </div>
+    </div>
+  </div>

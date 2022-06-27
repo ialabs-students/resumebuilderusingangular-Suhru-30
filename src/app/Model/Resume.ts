@@ -1,0 +1,58 @@
+export interface Resume {
+    firstName: string;
+    middleName: string;
+    lastName: string;
+    Email:string;
+    mobile:string;
+    dob:string;
+    Address:string;
+    Gender:string;
+    university1:string;
+    university2:string;
+    university3:string;
+    university4:string;
+    yearofpassing1:string;
+    yearofpassing2:string;
+    yearofpassing3:string;
+    yearofpassing4:string;
+    percentage1:string;
+    percentage2:string;
+    percentage3:string;
+    percentage4:string;
+    organization1:string;
+    organization2:string;
+    doj1:string;
+    doj2:string;
+    dor1:string;
+    dor2:string;
+    Experience:string;
+    Experience1:string;
+    tech1:string;
+    tech2:string;
+    tech3:string;
+    tech4:string;
+    tech5:string;
+    company1:string;
+    company2:string;
+    company3:string;
+    company4:string;
+    company5:string;
+    lastworkedon1:string;
+    lastworkedon2:string;
+    lastworkedon3:string;
+    lastworkedon4:string;
+    lastworkedon5:string;
+    rate1:string;
+    rate2:string;
+    rate3:string;
+    rate4:string;
+    rate5:string;
+    Describe:string;
+    Declaration:string;
+    Signature:string;
+    fb:string;
+    Ln:string;
+    In:string;
+
+
+}

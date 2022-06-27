@@ -1,0 +1,417 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div *ngIf="!showResume" style="background-color: #FFE6E8">
+
+  <div class="text-center">
+    <br>
+    <h1><b>Resume Builder</b></h1>
+    <br>
+  </div>
+  <br>
+  <div>
+    <marquee scrolldelay=10 direction="Right" class="text-center">
+      <h2 style="color:#C12869">BUILD YOUR RESUME HERE!....</h2>
+    </marquee>
+  </div>
+  <br>
+  <br>
+  <style>
+    table.center {
+      border: 3px rgb(205, 204, 204);
+      border-style: groove;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+  <div style="background-color:#FFE6E8">
+
+    <div class="container">
+      <div class="cover shadow-lg bg-white">
+        
+          <form class="center" action="" id="regForm" (submit)="saveFormData()">
+
+            <br>
+            <h2 style="text-align:left;padding-left: 50px;font-size: 30px;font-weight: 800px;"><b>Personal
+                Details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SocialMedia</b>
+            </h2>
+
+
+            <div class="row" style="padding-left: 100px">
+              <div class="col-md-2">
+                <div class="card-header" style="padding-left:10px;width:150px;height:150px">
+                  <img src="./assets/resume-images/avatar.jfif" style="width:130px;height:130px">
+                </div>
+                <!-- <div class="card-footer">
+                        <label><b style="font-size:14px;">upload picture</b></label>
+                   </div>
+                      <div>
+                        <br>
+                        <input type="file" name="picture" id="picture" accept="image/jpeg, image/png, image/jpg">
+                      </div>-->
+              </div>
+              <div class="col-md-9">
+                <div class="text-right pl-10">
+                  <br>
+                  <div>
+                    <i class="fa fa-facebook-official" style="font-size:20px;color:#000080">&nbsp;
+                      <span><input class="pd-2" type="url" id="fb" name="fb" style="width:6cm;height:auto"
+                          [(ngModel)]="formData.fb"></span>
+                    </i>
+                  </div>
+                  <br>
+                  <div>
+                    <i class="fa fa-instagram" style="font-size:20px;color:red">&nbsp;
+                      <span><input class="pd-2" type="url" id="In" name="In" style="width:6cm;height:auto"
+                          [(ngModel)]="formData.In"></span>
+                    </i>
+                  </div>
+                  <br>
+                  <div>
+                    <i class="fa fa-linkedin" style="font-size:20px;color:#000080">&nbsp;
+                      <span><input class="pd-2" type="url" id="Ln" name="Ln" style="width:6cm;height:auto"
+                          [(ngModel)]="formData.Ln"></span>
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <div class="form group">
+              <table border="20px solid" class="center" width="1000" style="margin-left:auto" style="margin-right:auto">
+                <tr style="text-align:center">
+                  <td> <label> <b>First Name </b></label> </td>
+                  <td> <input type="text" name="firstName" id="firstName" placeholder="FirstName"
+                      [(ngModel)]="formData.firstName"> </td>
+                  <td> <label> <b>Last Name </b></label> </td>
+                  <td> <input type="text" name="lastName" placeholder="lastName" [(ngModel)]="formData.lastName"> </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <label> <b>Email Id</b> </label> </td>
+                  <td> <input type="email" name="Email" id="Email" placeholder="Email id" [(ngModel)]="formData.Email">
+                  </td>
+                  <td> <label> <b>Enter Mobile Number </b></label> </td>
+                  <td> <input type="number" name="mobile" id="mobile" placeholder="Mobile No"
+                      [(ngModel)]="formData.mobile"> </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <label> <b>Date of Birth </b></label> </td>
+                  <td> <input type="date" name="dob" id="dob" [(ngModel)]="formData.dob"> </td>
+                  <td><label><b>Address</b></label></td>
+                  <td><input type="text" name="Address" id="Address" placeholder="Address"
+                      [(ngModel)]="formData.Address"></td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <label> <b>Gender </b></label> </td>
+                  <td> <input type="radio" name="Gender" value="Female" id="Gender" [(ngModel)]="formData.Gender">Female
+                  <td> <input type="radio" name="Gender" value="Male" id="Gender" [(ngModel)]="formData.Gender">Male
+                  <td> <input type="radio" name="Gender" value="Prefer" id="Gender" [(ngModel)]="formData.Gender">prefer
+                    not to say</td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <div>
+              <h2 style="text-align:left;padding-left:55px;font-size: 30px;font-weight: 800px;"><b>Educational
+                  Qualifications</b></h2>
+            </div>
+            <br>
+            <div>
+              <table border="30px solid" class="center" width="1000" style="margin-left:auto" style="margin-right:auto">
+                <thead>
+                  <tr style="text-align:center">
+                    <th> Education </th>
+                    <th> School/University</th>
+                    <th> Year of Passing </th>
+                    <th> Percentage/CGPA </th>
+                  </tr>
+                </thead>
+                <tr style="text-align:center">
+                  <td> <label> <b>Post Graduation </b></label> </td>
+                  <td> <input type="text" name="university1" id="university1" placeholder="Enter School/University"
+                      [(ngModel)]="formData.university1">
+                  </td>
+                  <td> <input type="number" name="yearofpassing1" id="yearofpassing1"
+                      placeholder="Enter Year of Passing" [(ngModel)]="formData.yearofpassing1"></td>
+                  <td> <input type="number" name="percentage1" id="percentage1" max="100"placeholder="Enter Percentage/CGPA"
+                      [(ngModel)]="formData.percentage1">
+                  </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <label> <b>Graduation </b></label> </td>
+                  <td> <input type="text" name="university2" id="university2" placeholder="Enter School/University"
+                      [(ngModel)]="formData.university2">
+                  </td>
+                  <td> <input type="number" name="yearofpassing2" id="yearofpassing2"
+                      placeholder="Enter Year of Passing" [(ngModel)]="formData.yearofpassing2"></td>
+                  <td> <input type="number" name="percentage2" id="percentage2" max="100" placeholder="Enter Percentage/CGPA"
+                      [(ngModel)]="formData.percentage2">
+                  </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <label> <b>Intermidate </b></label> </td>
+                  <td> <input type="text" name="university3" id="university3" placeholder="Enter School/University"
+                      [(ngModel)]="formData.university3">
+                  </td>
+                  <td> <input type="number" name="yearofpassing3" id="yearofpassing3"
+                      placeholder="Enter Year of Passing" [(ngModel)]="formData.yearofpassing3"></td>
+                  <td> <input type="number" name="percentage3" id="yearofpassing3" max="100" placeholder="Enter Percentage/CGPA"
+                      [(ngModel)]="formData.percentage3"></td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <label> <b>High School </b></label> </td>
+                  <td> <input type="text" name="university4" id="university4" placeholder="Enter School/University"
+                      [(ngModel)]="formData.university4">
+                  </td>
+                  <td> <input type="number" name="yearofpassing4" id="yearofpassing4"
+                      placeholder="Enter Year of Passing" [(ngModel)]="formData.yearofpassing4"></td>
+                  <td> <input type="number" name="percentage4" id="yearofpassing4"  max="100" placeholder="Enter Percentage/CGPA"
+                      [(ngModel)]="formData.percentage4"></td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <div class="form group">
+              <h2 style="text-align:left;padding-left:55px;font-size: 30px;font-weight: 800px;">
+                <b>Experience</b>
+              </h2>
+            </div>
+            <br>
+            <div>
+              <table border="30px solid" class="center" width="1000" style="margin-left:auto" style="margin-right:auto">
+                <thead>
+                  <tr style="text-align:center">
+                    <th> Organization </th>
+                    <th> Joining Date</th>
+                    <th> Releaving Date </th>
+                    <th>Years on Experience</th>
+                  </tr>
+                </thead>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="organization1" id="organization1" placeholder="Enter Organization1"
+                      [(ngModel)]="formData.organization1">
+                  </td>
+                  <td> <input type="date" name="doj1" id="doj1" placeholder="Enter Joining Date"
+                      [(ngModel)]="formData.doj1"> </td>
+                  <td> <input type="date" name="dor1" id="dor1" placeholder="Enter Releaving Date"
+                      [(ngModel)]="formData.dor1"> </td>
+                  <td> <select name="Experience" id="Experience" [(ngModel)]="formData.Experience">
+                      <option value="1 Month">1 Month </option>
+                      <option value="2 Months">2 Months </option>
+                      <option value="3 Months">3 Months</option>
+                      <option value="4 Months">4 Months</option>
+                      <option value="5 Months">5 Months</option>
+                      <option value="6 Months">6 Months</option>
+                      <option value="7 Months">7 Months</option>
+                      <option value="8 Months">8 Months</option>
+                      <option value="9 Months">9 Months</option>
+                      <option value="10 Months">10 Months</option>
+                      <option value="11 Months">11 Months</option>
+                      <option value="12 Months">12 Months</option>
+                      <option value="1 Year">1 year</option>
+                      <option value="1.5 Years">1.5 Years</option>
+                      <option value="2 Years">2 years</option>
+                      <option value="More than 2 Years">More than 2 years</option>
+                      <option value="More than 5 Years">More than 5 Years</option>
+                      <option value="10 Years">10 Years</option>
+                      <option value="12 More than 10 Years">More than 10 Years</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="organization2" id="organization2" placeholder="Enter Organization2"
+                      [(ngModel)]="formData.organization2">
+                  </td>
+                  <td> <input type="date" name="doj2" id="doj2" placeholder="Enter Joining Date"
+                      [(ngModel)]="formData.doj2"> </td>
+                  <td> <input type="date" name="dor2" id="dor2" placeholder="Enter Releaving Date"
+                      [(ngModel)]="formData.dor2"> </td>
+                  <td> <select name="Experience1" id="Experience1" [(ngModel)]="formData.Experience1">
+                      <option value="1 Month">1 Month </option>
+                      <option value="2 Months">2 Months </option>
+                      <option value="3 Months">3 Months</option>
+                      <option value="4 Months">4 Months</option>
+                      <option value="5 Months">5 Months</option>
+                      <option value="6 Months">6 Months</option>
+                      <option value="7 Months">7 Months</option>
+                      <option value="8 Months">8 Months</option>
+                      <option value="9 Months">9 Months</option>
+                      <option value="10 Months">10 Months</option>
+                      <option value="11 Months">11 Months</option>
+                      <option value="12 Months">12 Months</option>
+                      <option value="1 Year">1 year</option>
+                      <option value="1.5 Years">1.5 Years</option>
+                      <option value="2 Years">2 years</option>
+                      <option value="More than 2 Years">More than 2 years</option>
+                      <option value="More than 5 Years">More than 5 Years</option>
+                      <option value="10 Years">10 Years</option>
+                      <option value="12 More than 10 Years">More than 10 Years</option>
+                    </select></td>
+                </tr>
+
+              </table>
+            </div>
+            <br>
+            <div>
+              <h2 style="text-align:left;padding-left: 55px;font-size: 30px;font-weight: 800px;"><b>SkillSet</b></h2>
+              <br>
+            </div>
+            <div class="form group">
+              <table border="30px solid" width="1000" class="center" width="1000" style="margin-left:auto"
+                style="margin-right:auto">
+                <thead>
+                  <tr style="text-align:center">
+                    <th> Technology(top 5)</th>
+                    <th> project</th>
+                    <th> Last Worked On </th>
+                    <th> Rating </th>
+                  </tr>
+                </thead>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="tech1" id="tech1" placeholder="Enter Technology"
+                      [(ngModel)]="formData.tech1"></td>
+                  <td> <input type="text" name="company1" id="company1" placeholder="Project"
+                      [(ngModel)]="formData.company1"> </td>
+                  <td> <select name="lastworkedon1" id="lastworkedon1" [(ngModel)]="formData.lastworkedon1">
+                      <option value="Last Month">Last Month </option>
+                      <option value="Within 6 Months">Within 6 months </option>
+                      <option value="Before 6 Months">Before 6 Months </option>
+                    </select>
+                  </td>
+                  <td> <input type="number" max="10" name="rate1" id="rate1" placeholder="Rate yourself out of 10"
+                      [(ngModel)]="formData.rate1">
+                  </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="tech2" id="tech2" placeholder="Enter Technology"
+                      [(ngModel)]="formData.tech2"></td>
+                  <td> <input type="text" name="company2" id="company2" placeholder="Project"
+                      [(ngModel)]="formData.company2"> </td>
+                  <td> <select name="lastworkedon2" id="lastworkedon2" [(ngModel)]="formData.lastworkedon2">
+                      <option value="Last Month">Last Month </option>
+                      <option value="Within 6 Months">Within 6 months </option>
+                      <option value="Before 6 Months">Before 6 Months </option>
+                    </select>
+                  </td>
+                  <td> <input type="number" max="10" name="rate2" id="rate2" placeholder="Rate yourself out of 10"
+                      [(ngModel)]="formData.rate2">
+                  </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="tech3" id="tech3" placeholder="Enter Technology"
+                      [(ngModel)]="formData.tech3"></td>
+                  <td> <input type="text" name="company3" id="company3" placeholder="Project"
+                      [(ngModel)]="formData.company3"> </td>
+                  <td> <select name="lastworkedon3" id="lastworkedon3" [(ngModel)]="formData.lastworkedon3">
+                      <option value="Last Month">Last Month </option>
+                      <option value="Within 6 Months">Within 6 months </option>
+                      <option value="Before 6 Months">Before 6 Months </option>
+                    </select>
+                  </td>
+                  <td> <input type="number" max="10" name="rate3" id="rate3" placeholder="Rate yourself out of 10"
+                      [(ngModel)]="formData.rate3">
+                  </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="tech4" id="tech4" placeholder="Enter Technology"
+                      [(ngModel)]="formData.tech4"> </td>
+                  <td> <input type="text" name="company4" id="company4" placeholder="project"
+                      [(ngModel)]="formData.company4"> </td>
+                  <td> <select name="lastworkedon4" id="lastworkedon4" [(ngModel)]="formData.lastworkedon4">
+                      <option value="Last Month">Last Month </option>
+                      <option value="Within 6 Months">Within 6 months </option>
+                      <option value="Before 6 Months">Before 6 Months </option>
+                    </select>
+                  </td>
+                  <td> <input type="number" max="100" name="rate4" id="rate4" placeholder="Rate yourself out of 10"
+                      [(ngModel)]="formData.rate4">
+                  </td>
+                </tr>
+                <tr style="text-align:center">
+                  <td> <input type="text" name="tech5" id="tech5" placeholder="Enter Technology"
+                      [(ngModel)]="formData.tech5"> </td>
+                  <td> <input type="text" name="company5" id="company5" placeholder="Project"
+                      [(ngModel)]="formData.company5"> </td>
+                  <td> <select name="lastworkedon5" id="lastworkedon5" [(ngModel)]="formData.lastworkedon5">
+                      <option value="Last Month">Last Month </option>
+                      <option value="Within 6 Months">Within 6 months </option>
+                      <option value="Before 6 Months">Before 6 Months </option>
+                    </select>
+                  </td>
+                  <td> <input type="number" max="10" name="rate5" id="rate5" placeholder="Rate yourself out of 10"
+                      [(ngModel)]="formData.rate5">
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+            <div>
+              <br>
+              <h2 style="text-align:left;padding-left: 55px;font-size: 30px;font-weight: 800px;">
+                <b>Declarations</b>
+              </h2>
+              <br>
+            </div>
+            <div class="form group">
+              <table border="30px solid" width="1000" class="center" width="1000" style="margin-left:auto"
+                style="margin-right:auto">
+                <tr style="text-align:center">
+                  <th>Describe Yourself</th>
+                  <th>Declaration</th>
+                  <th>Signature</th>
+                </tr>
+                <tr style="text-align:center">
+                  <td><textarea id="Describe" name="Describe" width="40cm" height="auto" placeholder="Describe Yourself"
+                      [(ngModel)]="formData.Describe"></textarea></td>
+                  <td><textarea id="Declaration" name="Declaration" width="auto" height="auto" placeholder="Declaration"
+                      [(ngModel)]="formData.Declaration"></textarea><br></td>
+                  <td><input type="text" name="Signature" id="Signature" max="20" [(ngModel)]="formData.Signature"></td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <div class="text-center">
+              <input type="checkbox" style="padding-left:100px" important>Terms and conditions
+              <br>
+              <br>
+              <div class="text-center">
+                <button class="btn btn-success"
+                  type="submit"><b>Submit</b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-warning" type="reset"><b>Reset</b></button>
+              </div>
+            </div>
+            <br>
+          </form>
+
+          <br>
+          <!--
+            <div class="text-center">
+            <button class="btn btn-info" data-toggle="modal" data-target="#amodal">Model Resume</button>  
+            <div class="modal" id="amodal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3> model resume </h3>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                  </div>
+                  <div class="modal-body" id="model">
+                    <img src="./assets/resume-images/model-resume.png" style="width:100%;height:auto">
+                    <br>
+                    <br>
+                  </div>
+                </div>
+                </div>
+              </div>
+              </div>-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<app-generated-resume *ngIf="showResume"></app-generated-resume>
